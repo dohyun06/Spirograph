@@ -35,8 +35,7 @@ export class CircleGroup {
         this.circles = [];
 
         for (let i = 0; i < this.totalCircle; i++) {
-            this.cRadiuses[i] =
-                this.radiuses[i] * this.zoom + (i === this.totalCircle - 1 ? (this.isTrochoid ? this.point : 0) : this.radiuses[i + 1] * this.zoom * (this.isHypo ? -1 : 1));
+            this.cRadiuses[i] = (this.radiuses[i] + (i === this.totalCircle - 1 ? (this.isTrochoid ? this.point : 0) : this.radiuses[i + 1] * (this.isHypo ? -1 : 1))) * this.zoom;
         }
 
         for (let i = 0; i < this.totalCircle; i++) {

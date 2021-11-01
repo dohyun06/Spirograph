@@ -4,4 +4,4 @@ App to draw spirograph using canvas
 
 ## Link
 
-https://dohyun06.github.io/spirograph
+https://dohyun06.github.io/Spirograph/

@@ -98,12 +98,19 @@ export class Control {
         if (this.circleGroup.isHypo === true) {
             this.circleGroup.isHypo = false;
             this.h4IsHypo.innerText = 'IsHypo : false';
+
             for (let i = 0; i < 5; i++) {
                 this.inputCircle[i].max = 100;
             }
         } else {
             this.circleGroup.isHypo = true;
             this.h4IsHypo.innerText = 'IsHypo : true';
+
+            for (let i = 1; i < 5; i++) {
+                this.inputCircle[i].max = this.inputCircle[i - 1].value;
+                this.circleGroup.radiuses[i] = Number(this.inputCircle[i].value);
+                this.h4Circle[i].innerText = 'Radius of Circle' + (i + 1) + ' : ' + this.inputCircle[i].value;
+            }
         }
 
         this.clear = true;
@@ -142,7 +149,7 @@ export class Control {
             for (let i = index + 1; i < 5; i++) {
                 this.inputCircle[i].max = this.inputCircle[i - 1].value;
                 this.circleGroup.radiuses[i] = Number(this.inputCircle[i].value);
-                this.h4Circle[i].innerText = 'Radius of Circle' + (index + 1) + ' : ' + this.inputCircle[i].value;
+                this.h4Circle[i].innerText = 'Radius of Circle' + (i + 1) + ' : ' + this.inputCircle[i].value;
             }
         }
 

@@ -86,7 +86,7 @@ export class Control {
     }
 
     handleSpeed() {
-        this.circleGroup.speed = Number(this.inputSpeed.value) / 100;
+        this.circleGroup.speed = Number(this.inputSpeed.value) / 1000;
         this.h4Speed.innerText = 'Speed : ' + this.inputSpeed.value + ' (The higher the speed, the greater the error)';
 
         this.clear = true;
